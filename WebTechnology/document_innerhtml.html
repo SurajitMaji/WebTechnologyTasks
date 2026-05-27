@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>	<title> Name & Charactreristics</title></head>
+<body>
+
+<h1 id="heading"></h1>
+<ol id="chactr">
+
+</ol>
+<button onclick="take_details()" style="font-size:25px;padding:5px;text-align:center; 
+cursor:pointer;background-color:gray;">
+Take
+</button>
+<script> 
+function take_details(){
+let name=prompt("Enter your name:");
+let ch1=prompt("Enter 1st charecteristics:");
+let ch2=prompt("Enter 2nd charecteristics:");
+let ch3=prompt("Enter 3rd charecteristics:");
+document.getElementById("heading").innerHTML=name;
+document.getElementById("chactr").innerHTML=`
+<li>${ch1}</li>
+<li>${ch2}</li>
+<li>${ch3}</li>
+`;
+console.log(name);
+}
+</script>
+
+</body>
+</html>

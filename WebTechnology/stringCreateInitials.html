@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Initials</title>
+</head>
+<body>
+<center>
+    <h1>Create Initials</h1>
+
+        <input type="text" id="user_input">
+        <button onclick="make_initials()">Create</button>
+ 
+    <p id="input"></p>
+    <p id="output"></p>
+</center>
+<script>
+    function make_initials(){
+        let npt=document.getElementById("input");
+        let upt=document.getElementById("output");
+        let uVal=document.getElementById("user_input").value;       
+            npt.innerHTML="Input: "+uVal;
+            upt.innerHTML="Output: "+uVal[0];
+            for(let i=1;i<uVal.length;i++){
+                if(uVal[i-1]==" "){
+                    upt.innerHTML+=uVal[i];
+                }
+            }               
+    }
+</script>
+</body>
+</html>

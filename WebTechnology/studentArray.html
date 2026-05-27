@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>	<title> Array Accessing </title><head>
+<body>
+<h1>Student List</h1>
+<div>
+<button onclick="pushS()">Insert</button>
+<button onclick="popS()">Delete</button>
+</div>
+<ol id="stu_list"></ol>
+<script> 
+let studentList=["Amit","Didisha","Chinta","Arghya","Debottom","Sagen"];
+function showList(){
+	let s=document.getElementById("stu_list");
+	s.innerHTML="";
+	for(let i=0;i<studentList.length;i++){
+		s.innerHTML+=
+		`<li>`+studentList[i]+`</li>`
+	}
+}
+showList();
+function pushS(){
+	let n=prompt("Enter a name");
+	studentList.push(n);
+	showList();
+}
+function popS(){
+	studentList.pop();
+	showList();
+}
+</script>
+</body>
+</html>
+

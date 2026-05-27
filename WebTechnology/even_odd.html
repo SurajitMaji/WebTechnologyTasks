@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>	<title> Even-Odd Checking </title></head>
+<body>
+
+<form>
+<label>Enter number: </label>
+<input type="number" id="number_value" value="1" onchange="check()"> 
+<p id="result"></p>
+</form>
+
+
+<script> 
+check();
+function check(){
+ let a=document.getElementById("number_value").value;
+if(a%2==0){
+	document.getElementById("result").innerHTML="EVEN";
+}
+else{	
+	document.getElementById("result").innerHTML="ODD";
+}
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<html>
+<head><title>Photo Upload</title>
+
+</head>
+<body>
+<form>
+<label>Choose Photo: </label>
+<input type="file" id="image_file" onchange="show_image(event)"><br><br>
+<img id="show_photo" alt="image preview" height="400px" width="250px">
+
+
+</form>
+
+
+<script>
+let image=document.getElementById("image_file");
+
+let previewImage=document.getElementById("show_photo");
+
+function show_image(event){
+	let photo_file=event.target.files[0];
+	console.log(photo_file);
+	if(photo_file){
+		let reader= new FileReader();
+		reader.onload=function(e){
+
+			previewImage.src=e.target.result;
+		console.log("Image loaded:",previewImage.src);
+		}
+       reader.readAsDataURL(photo_file);
+	}
+	
+	
+}
+</script>
+</body>
+
+</html>
+
