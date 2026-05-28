@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+ 
+ <head>
+  
+ <title>Fibbonacci Series</title>
+    
+</head>
+ 
+ <body>
+    
+  <h1 class="title">Fibbonacci Series</h1>
+  
+	<button onclick="fibb()">Print</button>
+    <p id="fib_result"></p>
+    
+  <script>
+ 
+	function fibb(){    
+  let n=prompt("Enter the number:");
+  
+	n=Number(n);    
+  let res=document.getElementById("fib_result");
+ 
+       let a=0,b=1,c=0,loop=1;
+   
+	res.innerHTML=""; 
+    if(n>=0){
+        
+ 	 res.innerHTML+=a;
+        
+ 	 res.innerHTML+=" , ";
+     
+   }
+    
+    if(n>=1){
+   
+       res.innerHTML+=b;
+  
+        res.innerHTML+=" , ";
+ 
+       }
+        
+	while((a+b)<=n)
+ {
+     
+     		c=a+b;
+    
+      		res.innerHTML+=c;
+
+        	res.innerHTML+=" , ";
+ 
+        	 a=b;
+       
+  		 b=c;
+    
+    } 
+}
+  </script>
+
+  </body>
+
+</html>
