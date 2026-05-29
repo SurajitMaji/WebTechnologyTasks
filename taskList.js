@@ -32,13 +32,14 @@ country is not India then show the alert.`,"votterCard.html"],
 [`Design a registration form with the fields name, gender, date of birth,district, profile photo. By submitting the form the putting information show in the webpage.`,"registration.html"],
 [`Design a login form with user id and password fields and make them authenticate on submitting the form. 
 The authenticate values are stored in a 2-D arry.(Minimum 3 pair value)`,"login.html"],
-[`Make a TO-DO Application.`,"todo.html"],
+[`Make a TO-DO Application using HTML,CSS and Javascript.`,"todo.html"],
 [`Make a traffic signal system using HTML, CSS and Javascript`,"traficLight.html"],
 [`Develop a Simple calculator for addition, subtraction, multiplication and division operation
 using JavaScript.`,"calculatorComplete.html"],
-[`Design a webpage to a ship sailing handeler using HTML, CSS and Javascript.`,"sailing.html"]
-
-
+[`Design a webpage to a ship sailing handeler using HTML, CSS and Javascript.`,"sailing.html"],
+[`Design a table using HTML,CSS, Bootstrap.`,"tableBootrap.html" ],
+[`Make a Tic-Tac-Toe game using HTML,CSS and Javascript.`,"ticTakToe.html"],
+[`Make a arithmetic calculator using HTML,CSS and Javascript.`,""]
 
 
 ];

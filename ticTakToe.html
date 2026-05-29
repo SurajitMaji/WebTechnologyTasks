@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TIC TAC TOE</title>
+    <style>
+.container{
+  padding:10px;
+  magin:20px;
+}
+h1{
+  text-align: center;
+  color:blue;
+  font-family: system-ui;
+}
+.game-area{
+	display:flex;
+	justify-content:center;
+	flex-wrap:wrap;
+}
+.game-board{
+ display:flex;
+ justify-content:space-evenly;
+}
+.game-board table{
+	background-color:GhostWhite;
+	font-family: cursive;
+	font-size:70px;
+	padding:10px;
+	margin:10px;
+	font-weight:bold;
+	border-spacing: 20px;
+}
+td{
+	margin:40px;
+	padding:10px 35px;
+	background-color:MistyRose;
+	cursor: pointer;
+	box-shadow: 4px 4px 2px;
+	transition:1.2s;
+	
+}
+
+.game-controller-area{
+ display:flex;
+ flex-direction:column;
+ align-items:  center;
+justify-content:center;
+ gap:10px;
+ background-color: PaleGreen;
+ padding: 10px 80px;
+}
+.heading{
+  font-family: system-ui;
+  font-size:25px;
+}
+.button-area{
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: center;
+  
+}
+.button-area button{
+  padding:10px 20px;
+  margin: 10px;
+  font-family: Segoe UI;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: SteelBlue;
+  color: white;
+  border-radius:30px ;
+}
+	</style>
+  </head>
+  <body>
+	<div class="container">
+		<h1>Tic Tac Toe</h1>
+		<div class="game-area">
+			<div class="game-board">
+			  <table>
+			    <tr>
+			      <td id="box1" onclick="box_active(1)">_ </td>
+			      <td id="box2" onclick="box_active(2)">_</td>
+			      <td id="box3" onclick="box_active(3)">_ </td>
+			    </tr>
+			    <tr>
+			      <td id="box4" onclick="box_active(4)">_</td>
+			      <td id="box5" onclick="box_active(5)">_</td>
+			      <td id="box6" onclick="box_active(6)">_</td>
+			    </tr>
+			    <tr>
+			      <td id="box7" onclick="box_active(7)">_</td>
+			      <td id="box8" onclick="box_active(8)">_</td>
+			      <td id="box9" onclick="box_active(9)">_</td>
+			    </tr>
+			  </table>
+			</div>
+			<div class="game-controller-area">
+			  <div class="heading">Board</div>
+			  <div id="score_board"></div>
+			  <div class="button-area">
+			    <button id="reset" onclick="reset_game()">Reset Game</button>
+			    <button id="restart" onclick="restart_set()">Restart Set</button>
+			  </div>
+			</div>
+		</div>
+	</div>      
+     <script>
+	let score=document.getElementById("score_board");
+	let pl1=1,pl2=0; // those variable control whose turn to give the mark
+	let pl1w=0,pl2w=0; // set both the player win flag as not
+	let resArr=[0,0,0,0,0,0,0,0,0,0]; // holds index wise actions 
+	function box_active(x){
+		let cBox=document.getElementById("box"+x);
+		if(resArr[x]==0){  	// to avoid more than one click
+		if(pl1==1){
+			cBox.innerHTML="O";
+			cBox.style.backgroundColor="Aquamarine";
+			pl1=0;
+			pl2=1;
+			resArr[x]=1;
+		}
+		else{
+			cBox.innerHTML="X";
+			cBox.style.backgroundColor="DeepSkyBlue";
+			pl1=1;
+			pl2=0;
+			resArr[x]=2;
+		}
+		winCheck();
+		}
+	}
+	function restart_set(){
+		let i;
+		for(i=1;i<=9;i++){
+			let temp=document.getElementById("box"+i);
+			temp.innerHTML="-";
+			temp.style.backgroundColor="MistyRose";
+			resArr[i]=0;
+		}
+	}
+	function reset_game(){
+		restart_set();
+		winCheck();
+	}
+
+	// this function checks the game finished or not.
+	function winCheck(){
+		//score.innerHTML=resArr;
+		let winP=0;
+		if(resArr[1]!=0){
+			let  x=resArr[1];
+			if(x==resArr[2] && x==resArr[3]){ // when 1-2-3 match
+				winP=x;
+			}
+			else if(x==resArr[5] && x==resArr[9]){ // when 1-5-9 
+				winP=x;
+			}
+			else if(x==resArr[4] && x==resArr[7]){ // 1-4-7
+				winP=x;
+			}
+		}
+		if(resArr[2]!=0){
+			let x=resArr[2];
+			if(x==resArr[4] && x==resArr[7]){ // 2-6-8
+				winP=x;
+			}			
+		}
+		if(resArr[3]!=0){
+			let x=resArr[3];
+			if(x==resArr[5] && x==resArr[7]){ // 3-5-7
+				winP=x;
+			}
+			else if(x==resArr[6] && x==resArr[9]){	// 3-6-9
+				winP=x;
+			}
+		}
+		if(resArr[4]!=0){
+			let x=resArr[4];
+			if(x==resArr[5] && x==resArr[6]){ // 	4-5-6
+				winP=x;
+			}
+		}
+		if(resArr[7]!=0){
+			let x=resArr[7];
+			if(x==resArr[8] && x==resArr[9]){ // 	7-8-9
+				winP=x;
+			}	
+		}
+		
+		
+		if(winP==1){
+			score.innerHTML="Player 1 Won the game";
+		}
+		else if(winP==2){
+			score.innerHTML="Player 2 Won the game";
+		}
+		
+	}
+	</script>
+  </body>
+</html>

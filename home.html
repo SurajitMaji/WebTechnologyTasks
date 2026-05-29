@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Technology</title>
 	<style>
 		.container{
@@ -60,16 +63,25 @@
 	padding:10px 20px;
 	margin-top:20px;
 }
+
+@media screen and (max-width:720px){
+	#table_of_content{
+		display:flex;
+		flex-direction:column;
+		width:100%;
+		height:auto;
+	}
+}
 	</style>
   </head>
   <body>
 <div class="container">
       <h1 class="title">Web Technology Assignment</h1>
       <div id="table_of_content">
-	<section class="question-area" id="questions"></section>
-	<section class="frame-area" id="frame_box">
-		<h2> Welcome to Our Tutorial </h2>
-	</section>
+		<section class="question-area" id="questions"></section>
+		<section class="frame-area" id="frame_box">
+			<h2> Welcome to Our Tutorial </h2>
+		</section>
 	</div>
 
 </div>
